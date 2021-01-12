@@ -57,7 +57,7 @@ price_grad_desc
 % Calculate the parameters from the normal equation
 theta_normal = inv(houses_unscaled.'*houses_unscaled)*(houses_unscaled.'*prices)
 
-%Estimate the house price again
+%Estimate the house price with normalised thetas
 price_normal = dot(theta_normal, [1, 1650, 3]);
 fprintf("predicted price from normal equation: ");price_normal
 %% Step 6: Regularization
