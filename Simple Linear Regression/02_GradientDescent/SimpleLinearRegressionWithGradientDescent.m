@@ -1,7 +1,7 @@
 clc;clear;close all;
 % Fetch the generated data
-age =load('Ages.dat'); % random sorted ages between 3 and 10
-height =load('Heights.dat'); % random heights between 0.90 cm and 140 cm
+age =load('Ages.dat'); % random sorted ages between 2 and 8
+height =load('Heights.dat'); % random heights between 0.7 m and 1.3 m
 n = size(age,1);
 plot(age,height,'x')
 title('Children Height')
@@ -38,5 +38,5 @@ legend( 'Linear regression','First itteration','Training data')
 ylim([0,3])
 
 % 6. Predictions
-child350 = 3.5 * theta(2) + theta(1)
-child700 = 7 * theta(2) + theta(1)
+child3y50 = 3.5 * theta(2) + theta(1)
+child7y00 = 7 * theta(2) + theta(1)
