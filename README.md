@@ -6,7 +6,7 @@ The purpose of this research is to broaden my knowledge about artificial intelli
 
 ### Regression
 AI's are seperated into two main cathegories: '*narrow*' or '*weak*' AI, and '*general*' or '*strong*' AI:
-* Weak AI are machine learning solutions created for a specific task. This can vary from understanding and analysing trends in market shares to finding the optimal location for a pizza shop. these AI's aren't concidered *real intelligence* but  use statistics to handle problems depenidant on their given training.
+* Weak AI are machine learning solutions created for a **specific task**. This can vary from understanding and analysing trends in market shares to finding the optimal location for a pizza shop. these AI's aren't concidered *real intelligence* but  use statistical analysations to handle different problems dependant on their given training.
 #### Supervised Learning
 
 #### Linear Regression
