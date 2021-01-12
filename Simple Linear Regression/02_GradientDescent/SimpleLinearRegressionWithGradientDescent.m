@@ -8,8 +8,8 @@ title('Children Height')
 xlabel('age (year)') 
 ylabel('height (meter)')
 hold on
-%% Make an Intercept points ()1
-IP = ones(n,1);
+%% Make an Intercept points ()
+IP = ones(n,1); % otherwhise you force the line to run trough the origin
 age = [IP age];
 %% Implement Gradient Descent
 alfa = 0.06; % Learning rate adjust with different data sets
