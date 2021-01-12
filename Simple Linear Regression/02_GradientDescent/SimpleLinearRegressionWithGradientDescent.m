@@ -1,5 +1,5 @@
 clc;clear;close all;
-% Fetch the generated data
+%% Fetch the generated data
 age =load('Ages.dat'); % random sorted ages between 2 and 8
 height =load('Heights.dat'); % random heights between 0.7 m and 1.3 m
 n = size(age,1);
@@ -8,17 +8,17 @@ title('Children Height')
 xlabel('age (year)') 
 ylabel('height (meter)')
 hold on
-% 3. Intercept point 1
+%% Make an Intercept points ()1
 IP = ones(n,1);
 age = [IP age];
-% 4. Implementation Gradient Descent
+%% Implement Gradient Descent
 alfa = 0.06; % Learning rate adjust with different data sets
 alltheta = [0,0];
 h = age*alltheta(1,:)';
 alltheta(2,1) = alltheta(1,1) - alfa/n*sum((h-height).*age(:,1));
 alltheta(2,2) = alltheta(1,2) - alfa/n*sum((h-height).*age(:,2));
 plot(age(:,2), age*alltheta(2,:)', '-')
-% 5. Iterations
+%% Iterate to get a better theta
 maxir = 1500;
 % start from the third itteration, you already have it 1 
 for it = 2:maxir+2
@@ -37,6 +37,6 @@ plot(age(:,2), age*theta', '-')
 legend( 'Linear regression','First itteration','Training data')
 ylim([0,3])
 
-% 6. Predictions
+%% Predictions for a 3,5 y/o and a 7y/o
 child3y50 = 3.5 * theta(2) + theta(1)
 child7y00 = 7 * theta(2) + theta(1)
