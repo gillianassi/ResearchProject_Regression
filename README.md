@@ -27,11 +27,12 @@ This research focusses on the different types of regression algorithms, who try 
 Linear regressiion is a frequently used method to analyze an available data set. 
 
 ##### Simple Linear Regression
+###### General explenation
 The most commonly used form of linear regression is known as **least squares fitting**. This form aims to fit a polynomial curve to data, in a way that the sum of squares of the distance from the line to the data points is minimized.
 
 When the least squeres estimator of a linear regression model with a single explanatory variable is called **simple linear regression**. This fits a straight line trough a set of n points in such a way that makes the sum of squared residuals as small as possible. A visualisation of this process can be seen in the following image:
 
-![](Images/LeastSquaresFitting.png)
+<p align="center"><img src="Images/LeastSquaresFitting.png" alt="LSF" width="250"/></p>
 
 Suppose there are n training samples  <ins>x<sub></ins>i</sub>= (1, x<sub>i1</sub>)<sup>T</sup> and y<sub>i</sub>, where i = 1, 2, ... , n. 
 These samples represent the input random vector <br/> <ins>X</ins> = (1, X<sub>i</sub>)<sup>T</sup>and the output random variable Y, respectively.
@@ -50,18 +51,35 @@ Y = θ<sub>0</sub> + θ<sub>1</sub>X<sub>1</sub>
 
 This provides the most optimal fit for the data points, where the sum of squared residuals are minimized. This would mean that the y-intercept θ<sub>0</sub> and the slope θ<sub>1</sub> solve the following minimization problem:
 
-![](Images/MinimizationProblem.png)
+<p align="center"><img src="Images/MinimizationProblem.png" alt="Minimization" width="300"/></p>
 
 By expanding to get a quadratic expression in θ<sub>0</sub> and θ<sub>1</sub>, it can be shown that the minimizing values of θ<sub>0</sub> and θ<sub>1</sub> of the formula above are:
 
-![](Images/ThetaValues.png)
+<p align="center"><img src="Images/ThetaValues.png" alt="values" width="150"/></p>
 
 where x<sub>1</sub> = (x<sub>11</sub>, ... , x<sub>i1</sub>, ... , x<sub>n1</sub>) and y = (y<sub>11</sub>, ... , y<sub>i1</sub>, ... , y<sub>n1</sub>) are the row
 vectors that contain all sample values of the variables X<sub>1</sub> and Y, respectively. Note that the circumflex over a quantity indicates the sample average. For a more detailed description of the simple linear regression theory, I would recommend the following sources:
 * Section 3.1, Chapter 3 from the book “Pattern recognition and machine learning” of Bishop and Nasrabadi.
 * https://mathworld.wolfram.com/LeastSquaresFitting.html
 
+###### Implementation: Introduction
+>The files of this implementation can be found [here](Simple%20Linear%20Regression/01_Introduction)
+
+To understand the concept of simple linear regression I generated some experimental data adding artificial noise using the equation y = a<sub>0</sub> + a<sub>1</sub> * x, where a<sub>0</sub> = 2 and a<sub>1</sub> = 1. This is shown in the following image, containing a yellow line indicating the computed linear regression:
+
+<p align="center"><img src="Images/Example1SLR.png" alt="values" width="400"/></p>
+
+The regression line is calculated using built-in Matlab functions to quickly get the grasp of the concept. <br/>
+By playing with the standard deviation of the errors, it is noticeable  that the calculated regression becomes less accurate.
+
+<p align="center"><img src="Images/Example2SLR.png" alt="values" width="400"/></p>
+
+To simulate the effects of a random experimental error, I've repeated this process 1000 times with a fixed standard deviation of 0,1. By analysing the means in a histogram using a Gaussian curve, as shown in the image below, we notice that a<sub>0</sub> is most likely equal to 1, and a<sub>1</sub> = 2. Knowing that our basic function was y = 1 + 2x, we can assume that our approach was effective.
+
+<p align="center"><img src="Images/Example3SLR.png" alt="values" width="400"/></p>
+
 ##### Gradient Descent
+
 
 #### Multivariate Linear Regression
 
