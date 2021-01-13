@@ -5,9 +5,16 @@
 The purpose of this research is to broaden my knowledge about artificial intelligence (AI), more specifically, **regression**. This will be done by implementing a set of exercises with both self-generated data and existing datasets to get a better grasp of the subject. Both advantages and drawbacks will be discussed for each type of regression analysed during this research.
 
 ### Regression
-AI's are seperated into two main cathegories: '*narrow*' or '*weak*' AI, and '*general*' or '*strong*' AI:
-* Weak AI are machine learning solutions created for a **specific task**. This can vary from understanding and analysing trends in market shares to finding the optimal location for a pizza shop. these AI's aren't concidered *real intelligence* but  use statistical analysations to handle different problems dependant on their given training.
+Modern AI's are machine learning solutions created for a **specific task**. This can vary from understanding and analysing trends in market shares to finding the optimal location for a pizza shop. These AI's aren't considered *real intelligence* but use statistics and analytics to handle different problems dependant on their given training.
+The way that such AI's learn can be subdivided into three categories:
+* *Spurvised Learning*, in which the algorithms are trained for a specific task with pre-existing datasets and human supervision.
+* *Unsupervised learning*, where the algorithm looks for previously undetected patterns  in pre-existing datasets with as less human supervision as possible.
+* *Reinforcement Learning*, in which the algorithms learn using trial and error by adding positive and negative values to experiences and situations.
+
+AI's that combine different aspects of learning also exist but are out of the scope of this research.
+
 #### Supervised Learning
+The most relevant training method for this research is *Supervised Learning*.  It's problems can be subdivided into
 
 #### Linear Regression
 ##### Simple Linear Regression
