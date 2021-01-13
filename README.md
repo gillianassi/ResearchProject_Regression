@@ -201,7 +201,7 @@ With the calculated theta's we can create a decision boundary between the admitt
 
 The implementation can be seen in the next image:
 
-<p align="center"><img src="Images/Example2LR.png" alt="RL2" width="400"/><img src="Images/Example1LR.png" alt="RL1" width="400"/></p>
+<p align="center"><img src="Images/Example2LR.png" alt="RL2" width="400"/><img src="Images/Example1LR.png" alt="RL1" width="430"/></p>
 
 A clear decision boundary splits the two categories as accurately as possible with a linear line. 
 Just like with gradient descent, we can see how the cost function converges to a minimum value. However, notice that it only takes 4 iterations for this method to converge compared to the 1500 iterations of gradient descent. This indicates that Newton's method is significantly faster than gradient descent.
@@ -214,22 +214,24 @@ With this implementation, the probability if a student will be admitted with cer
 ##### Implementation: Regulised Logistic Regression
 >The files of this implementation can be found [here](Logistic%20Regression/Regulised%20Logistic%20Regression).
 
-This implementation is my method used while following an exercise provided by the learning platform 'openclassroom' in the course *Machine Learning* found [here](http://openclassroom.stanford.edu/MainFolder/DocumentPage.php?course=MachineLearning&doc=exercises/ex5/ex5.html). This example uses regulised logistic regression to create a decision boundry that indicates wether microchips from a fabrication plan passes Quality Assurance by means of two tests. It is important to note that this implementation uses a lot of provided code from the cource *Machine Learning*. This includes the following functions [mapfeature.m](Logistic%20Regression/Regulised%20Logistic%20Regression/mapFeature.m), [plotData.m](Logistic%20Regression/Regulised%20Logistic%20Regression/plotData.m), and [plotDecisionBoundary.m](Logistic%20Regression/Regulised%20Logistic%20Regression/plotDecisionBoundary.m). For the other frunctions, templates were used but the main code was written by myself.
+This implementation is my method used while following an exercise provided by the learning platform 'openclassroom' in the course *Machine Learning* found [here](http://openclassroom.stanford.edu/MainFolder/DocumentPage.php?course=MachineLearning&doc=exercises/ex5/ex5.html). This example uses regulised logistic regression to create a decision boundary that indicates whether microchips from a fabrication plan passes Quality Assurance by means of two tests. It is important to note that this implementation uses a lot of provided code from the course *Machine Learning*. This includes the following functions [mapfeature.m](Logistic%20Regression/Regulised%20Logistic%20Regression/mapFeature.m), [plotData.m](Logistic%20Regression/Regulised%20Logistic%20Regression/plotData.m), and [plotDecisionBoundary.m](Logistic%20Regression/Regulised%20Logistic%20Regression/plotDecisionBoundary.m). For the other functions, templates were used but the main code was written by myself.
 
-Because two tests are used to asses the validation of the microchips, regulisation is nececary. The regulized cost function and gradient formulas in logistic regression are Respectivaly
+Because two tests are used to assess the validation of the microchips, regulation is necessary. The regulized cost function and gradient formulas in logistic regression are respectively
 
 <p align="center"><img src="Images/RegulisedCostFunction.png" alt="Rcost" width="300"/></p>
 <p align="center">and </p>
 <p align="center"><img src="Images/RegulisedGradient.png" alt="Rgrad" width="400"/></p>
 
-After succesfully implementing these functions a clear decision boundrey is shown in the following image:
+After successfully implementing these functions a clear decision boundary  is shown in the following image:
 
 <p align="center"><img src="Images/RLogR.png" alt="RlogR" width="400"/></p>
 
-
 ### 3 Future work
+It can be very interesting to implement the regression algorithms on real datasets instead of generated or provided ones. Although I have learned a lot from these implementations, I feel that I still have a lot to discover in the field of regression. In addition, I only briefly looked at the subject of classification problems. This can be elaborated on in the future.
+A final option could be to look more into the optimisation of such algorithms to possibly make them usable in real-time. 
 
 ### 4 Conclusion
+Even if regression is one of the more commonly know AI-algorithms it can **not** be underestimated. However, while the statistical approach was overwhelming in the beginning, implementing them proved to clarify the meaning of each formula a lot. The concept of regression became more clear for me and I think I am capable of making basic implementations. Finally, I do not think a lot of games use or can use regression as the main gameplay feature, but I can definitely see it being used by an AI to categorise elements or make predictions to make the right decisions in given circumstances.
 
 ### 5 Sources
 * Machine learning Chapters used (http://openclassroom.stanford.edu/MainFolder/CoursePage.php?course=MachineLearning):
@@ -237,7 +239,8 @@ After succesfully implementing these functions a clear decision boundrey is show
   * http://openclassroom.stanford.edu/MainFolder/DocumentPage.php?course=MachineLearning&doc=exercises/ex3/ex3.html
   * http://openclassroom.stanford.edu/MainFolder/DocumentPage.php?course=MachineLearning&doc=exercises/ex4/ex4.html 
   * http://openclassroom.stanford.edu/MainFolder/DocumentPage.php?course=MachineLearning&doc=exercises/ex5/ex5.html
-
+* Formullas, general information and simoid function
+  * [Supervised Learning](https://sgfin.github.io/files/notes/CS229_Lecture_Notes.pdf)
 * Artificial intelligence:
   * https://www.unemyr.com/understanding-ai-algorithms/
 * Regression
@@ -245,12 +248,11 @@ After succesfully implementing these functions a clear decision boundrey is show
   * https://machinelearningmastery.com/supervised-and-unsupervised-machine-learning-algorithms/
   * https://www.unemyr.com/ai-algorithms-regression/
 * Simple Linear regression
- * http://home.iitk.ac.in/~shalab/econometrics/Chapter2-Econometrics-SimpleLinearRegressionAnalysis.pdf
+  * http://home.iitk.ac.in/~shalab/econometrics/Chapter2-Econometrics-SimpleLinearRegressionAnalysis.pdf
 * Gradient descent
- * https://medium.com/@lachlanmiller_52885/machine-learning-week-1-cost-function-gradient-descent-and-univariate-linear-regression-8f5fe69815fd
+  * https://medium.com/@lachlanmiller_52885/machine-learning-week-1-cost-function-gradient-descent-and-univariate-linear-regression-8f5fe69815fd
 * Multivariate regression
- * https://brilliant.org/wiki/multivariate-regression/#:~:text=Multivariate%20Regression%20is%20a%20method,responses)%2C%20are%20linearly%20related.
+  * https://brilliant.org/wiki/multivariate-regression/#:~:text=Multivariate%20Regression%20is%20a%20method,responses)%2C%20are%20linearly%20related.
 * Logistic regression
- *https://www.geeksforgeeks.org/understanding-logistic-regression/#:~:text=Logistic%20regression%20is%20basically%20a,regression%20IS%20a%20regression%20model.
-* Formullas, general information and simoid function
- * [Supervised Learning](https://sgfin.github.io/files/notes/CS229_Lecture_Notes.pdf)
+  * https://www.geeksforgeeks.org/understanding-logistic-regression/#:~:text=Logistic%20regression%20is%20basically%20a,regression%20IS%20a%20regression%20model.
+
