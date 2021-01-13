@@ -34,7 +34,7 @@ When the least squeres estimator of a linear regression model with a single expl
 
 <p align="center"><img src="Images/LeastSquaresFitting.png" alt="LSF" width="250"/></p>
 
-Suppose there are n training samples  <ins>x<sub></ins>i</sub>= (1, x<sub>i1</sub>)<sup>T</sup> and y<sub>i</sub>, where i = 1, 2, ... , n. 
+Suppose there are n training samples  <ins>x</ins><sub>i</sub>= (1, x<sub>i1</sub>)<sup>T</sup> and y<sub>i</sub>, where i = 1, 2, ... , n. 
 These samples represent the input random vector <br/> <ins>X</ins> = (1, X<sub>i</sub>)<sup>T</sup>and the output random variable Y, respectively.
 The following function describes <ins>x</ins> <sub>i</sub> and y<sub>i</sub>:
 
@@ -67,19 +67,39 @@ vectors that contain all sample values of the variables X<sub>1</sub> and Y, res
 
 To understand the concept of simple linear regression I generated some experimental data adding artificial noise using the equation y = a<sub>0</sub> + a<sub>1</sub> * x, where a<sub>0</sub> = 2 and a<sub>1</sub> = 1. This is shown in the following image, containing a yellow line indicating the computed linear regression:
 
-<p align="center"><img src="Images/Example1SLR.png" alt="values" width="400"/></p>
+<p align="center"><img src="Images/Example1SLR.png" alt="SLR1" width="400"/></p>
 
 The regression line is calculated using built-in Matlab functions to quickly get the grasp of the concept. <br/>
 By playing with the standard deviation of the errors, it is noticeable  that the calculated regression becomes less accurate.
 
-<p align="center"><img src="Images/Example2SLR.png" alt="values" width="400"/></p>
+<p align="center"><img src="Images/Example2SLR.png" alt="SLR2" width="400"/></p>
 
 To simulate the effects of a random experimental error, I've repeated this process 1000 times with a fixed standard deviation of 0,1. By analysing the means in a histogram using a Gaussian curve, as shown in the image below, we notice that a<sub>0</sub> is most likely equal to 1, and a<sub>1</sub> = 2. Knowing that our basic function was y = 1 + 2x, we can assume that our approach was effective.
 
-<p align="center"><img src="Images/Example3SLR.png" alt="values" width="400"/></p>
+<p align="center"><img src="Images/Example3SLR.png" alt="SLR3" width="400"/></p>
 
 ##### Gradient Descent
+Gradient Descent is theoretically an algorithm that minimizes functions. This perfectly fits in the context of regression, where one tries to minimalize the sum of squared residuals. Any function can be defined by a set of parameters <ins>0</ins>. Gradient descent will initialize such a set and gradually move towards a set of parameters to minimize a cost function using calculus.
 
+For each sample <ins>x</ins><sub>i</sub> = (1, x<sub>i1</sub>)<sup>T</sup> the hypothesis function can be defined as
+
+
+<p align="center">h(<ins>x</ins><sub>i</sub>) = <ins>θ</ins><sup>T</sup> <ins>x</ins><sub>i</sub> = θ<sub>0</sub> + θ<sub>1</sub>x<sub>i1</sub>,</p>
+
+or,
+<p align="center">h(<ins>x</ins><sub>i</sub>) = <ins>x</ins><sub>i</sub><sup>T</sup><ins>θ</ins> = θ<sub>0</sub> + θ<sub>1</sub>x<sub>i1</sub>,</p>
+
+The next step is to figure out the parameters θ = (θ<sub>0</sub>, θ<sub>1</sub>)<sup>T</sup> , which will minimize the square error between the predicted value h(<ins>x</ins>) and the actual output y for all values i in the training set. The cost function can then be noted as followed:
+
+<p align="center"><img src="Images/InitialCostFunction.png" alt="InitCost" width="300"/></p>
+
+In this formula, n represents the number of training sets. The scaling of 1/2n is simply notational convenience. This can also be rewritten using matrix notations as
+
+<p align="center"><img src="Images/InitialCostFunctionMatrixNot.png" alt="MatrixCost" width="300"/></p>
+
+To reduce the cost function, θ will need to be updated each iteration  using the following update rule
+
+<p align="center"><img src="Images/UpdateRule.png" alt="UpdateRule" width="500"/></p>
 
 #### Multivariate Linear Regression
 
@@ -105,3 +125,5 @@ To simulate the effects of a random experimental error, I've repeated this proce
   * https://www.unemyr.com/ai-algorithms-regression/
 * Simple Linear regression
  * http://home.iitk.ac.in/~shalab/econometrics/Chapter2-Econometrics-SimpleLinearRegressionAnalysis.pdf
+* Gradient descent
+ * https://medium.com/@lachlanmiller_52885/machine-learning-week-1-cost-function-gradient-descent-and-univariate-linear-regression-8f5fe69815fd
