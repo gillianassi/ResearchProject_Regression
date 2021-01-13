@@ -16,7 +16,7 @@ AI's that combine different aspects of learning also exist but are out of the sc
 #### Supervised Learning
 The most relevant training method for this research is *Supervised Learning*. During supervised learning the goal is to approximate a mapping function *f* from input *x* to output *Y* using algorithms. 
 <p align="center">
-Y = f(x)
+Y = f(x) 
 </p>
 
 This method is referred to as supervised learning because the creator knows what the correct answers need to look like. While the algorithm makes predictions on the training data, the creator will correct if it is necessary. When a certain level of accuracy is achieved, the learning stops. Supervised learning problems can be subdivided into **classification** and **regression** problems. The output of both problems will, as their name suggests, be different. Classification problems will output a *category* and tries to classify the received datasets. Regression problems, on the other hand, predict a *numeric value in any range* as output variable, such as "height" or "speed".
@@ -63,22 +63,23 @@ vectors that contain all sample values of the variables X<sub>1</sub> and Y, res
 * https://mathworld.wolfram.com/LeastSquaresFitting.html
 
 ###### Implementation: Introduction
->The files of this implementation can be found [here](Simple%20Linear%20Regression/01_Introduction)
+>The files of this implementation can be found [here](Simple%20Linear%20Regression/01_Introduction).
 
-To understand the concept of simple linear regression I generated some experimental data adding artificial noise using the equation y = a<sub>0</sub> + a<sub>1</sub> * x, where a<sub>0</sub> = 2 and a<sub>1</sub> = 1. This is shown in the following image, containing a yellow line indicating the computed linear regression:
+To understand the concept of simple linear regression I generated some experimental data adding artificial noise using the equation <br/> y = a<sub>0</sub> + a<sub>1</sub> * x, where a<sub>0</sub> = 2 and a<sub>1</sub> = 1. This is shown in the following image, containing a yellow line indicating the computed linear regression:
 
-<p align="center"><img src="Images/Example1SLR.png" alt="SLR1" width="400"/></p>
+<p align="center"><img src="Images/Example1SLR.png" alt="SLR1" width="500"/></p>
 
 The regression line is calculated using built-in Matlab functions to quickly get the grasp of the concept. <br/>
 By playing with the standard deviation of the errors, it is noticeable  that the calculated regression becomes less accurate.
 
-<p align="center"><img src="Images/Example2SLR.png" alt="SLR2" width="400"/></p>
+<p align="center"><img src="Images/Example2SLR.png" alt="SLR2" width="500"/></p>
 
 To simulate the effects of a random experimental error, I've repeated this process 1000 times with a fixed standard deviation of 0,1. By analysing the means in a histogram using a Gaussian curve, as shown in the image below, we notice that a<sub>0</sub> is most likely equal to 1, and a<sub>1</sub> = 2. Knowing that our basic function was y = 1 + 2x, we can assume that our approach was effective.
 
-<p align="center"><img src="Images/Example3SLR.png" alt="SLR3" width="400"/></p>
+<p align="center"><img src="Images/Example3SLR.png" alt="SLR3" width="500"/></p>
 
 ##### Gradient Descent
+###### General explenation
 Gradient Descent is theoretically an algorithm that minimizes functions. This perfectly fits in the context of regression, where one tries to minimalize the sum of squared residuals. Any function can be defined by a set of parameters <ins>0</ins>. Gradient descent will initialize such a set and gradually move towards a set of parameters to minimize a cost function using calculus.
 
 For each sample <ins>x</ins><sub>i</sub> = (1, x<sub>i1</sub>)<sup>T</sup> the hypothesis function can be defined as
@@ -100,6 +101,28 @@ In this formula, n represents the number of training sets. The scaling of 1/2n i
 To reduce the cost function, θ will need to be updated each iteration  using the following update rule
 
 <p align="center"><img src="Images/UpdateRule.png" alt="UpdateRule" width="500"/></p>
+
+###### Implementation: Gradient Descent
+>The files of this implementation can be found [here](Simple%20Linear%20Regression/02_GradientDescent).
+
+For this implementation, I replicated an exercise found on the learning platform openclassroom in the course *Machine Learning* found [here](http://openclassroom.stanford.edu/MainFolder/DocumentPage.php?course=MachineLearning&doc=exercises/ex2/ex2.html). This was done by generating my own relevant data and implementing linear regression. The generated data involves children between the ages of 2 and 8 years old and their heights.
+
+The implementation focusses on using the *update rule*  to update θ. In the following image, the red line indicates the first calculated regression line after 1 iteration of the update rule. This is clearly an inaccurate representation of the dataset, but after 1478 iterations, both theta's have convoluted to a fixed value. The regression line found with these theta values is shown by the yellow line.
+
+<p align="center"><img src="Images/Example1GDSLR.png" alt="SLR3" width="500"/></p>
+
+This regression line can further be used to estimate the average height of children with a specific age, an example can be found in the code.
+
+*Note that it is important to adjust the learning rate with different datasets. This can either make or break the linear regression.*
+
+###### Implementation: Visualisation of Gradient Descent
+>The files of this implementation can be found [here](Simple%20Linear%20Regression/02_GradientDescent).
+
+By implementing the definition of the cost function, all possible theta's can be calculated and visualised inside of a surface plot. If this is done using the previously generated dataset the following can be created:
+
+<p align="center"><img src="Images/Example2GDSLR.png" alt="SLR3" width="500"/></p>
+
+The red line indicates the theta's calculated in the previous example. It is important to note that this red line can be found in the valley of the surface plot, where the cost function is at its lowest.
 
 #### Multivariate Linear Regression
 
