@@ -20,7 +20,6 @@ plot(x,y2, 'x','HandleVisibility','off')
 p = polyfit(x,y2,1); % get calculated a0 and a1
 y3 = polyval(p,x);% get y values with x
 plot(x,y3)
-
 % 4. Repeat with different standard deviations
 %-------------------------------------------------------------
 for sig = 0.2:0.2:1

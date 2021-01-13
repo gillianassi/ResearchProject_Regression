@@ -34,7 +34,7 @@ end
 it
 theta = alltheta(it,:)
 plot(age(:,2), age*theta', '-')
-legend( 'Linear regression','First itteration','Training data')
+legend( 'Training data','First itteration','Linear Regression')
 ylim([0,3])
 
 %% Predictions for a 3,5 y/o and a 7y/o
