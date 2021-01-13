@@ -193,6 +193,24 @@ These formulas were the basis used in my implementation in the section bellow.
 ##### Implementation: Newton’s Method
 >The files of this implementation can be found [here](Logistic%20Regression/NewtonsMethod).
 
+This implementation is my method used while following an exercise provided by the learning platform 'openclassroom' in the course *Machine Learning* found [here](http://openclassroom.stanford.edu/MainFolder/DocumentPage.php?course=MachineLearning&doc=exercises/ex4/ex4.html). This implementation focusses on using Newton's method to build a binary classification model to estimate college admission chances based on student scores on two exams. This was done by following the formulas mentioned at the end of section 2.4. 
+
+With the calculated theta's we can create a decision boundary between the admitted and not admitted students. This is done using the formula 
+
+<p align="center"><img src="Images/LRDecisionBoundry.png" alt="LRDB" width="200"/></p>
+
+The implementation can be seen in the next image:
+
+<p align="center"><img src="Images/Example2LR.png" alt="RL2" width="400"/><img src="Images/Example1LR.png" alt="RL1" width="400"/></p>
+
+A clear decision boundary splits the two categories as accurately as possible with a linear line. 
+Just like with gradient descent, we can see how the cost function converges to a minimum value. However, notice that it only takes 4 iterations for this method to converge compared to the 1500 iterations of gradient descent. This indicates that Newton's method is significantly faster than gradient descent.
+
+With this implementation, the probability if a student will be admitted with certain exam scores can be calculated by using the following formula:
+
+<p align="center">P(y=1|exam<sub>1</sub>,exam<sub>2</sub>) = 1 - sigmoid(θ<sub>1</sub> + θ<sub>2</sub> * exam<sub>1</sub> + θ<sub>3</sub> * exam<sub>2</sub>)</p>
+
+
 ##### Implementation: Regulised Logistic Regression
 >The files of this implementation can be found [here](Logistic%20Regression/Regulised%20Logistic%20Regression).
 
