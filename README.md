@@ -214,6 +214,17 @@ With this implementation, the probability if a student will be admitted with cer
 ##### Implementation: Regulised Logistic Regression
 >The files of this implementation can be found [here](Logistic%20Regression/Regulised%20Logistic%20Regression).
 
+This implementation is my method used while following an exercise provided by the learning platform 'openclassroom' in the course *Machine Learning* found [here](http://openclassroom.stanford.edu/MainFolder/DocumentPage.php?course=MachineLearning&doc=exercises/ex5/ex5.html). This example uses regulised logistic regression to create a decision boundry that indicates wether microchips from a fabrication plan passes Quality Assurance by means of two tests. It is important to note that this implementation uses a lot of provided code from the cource *Machine Learning*. This includes the following functions [mapfeature.m](Logistic%20Regression/Regulised%20Logistic%20Regression/mapFeature.m), [plotData.m](Logistic%20Regression/Regulised%20Logistic%20Regression/plotData.m), and [plotDecisionBoundary.m](Logistic%20Regression/Regulised%20Logistic%20Regression/plotDecisionBoundary.m). For the other frunctions, templates were used but the main code was written by myself.
+
+Because two tests are used to asses the validation of the microchips, regulisation is nececary. The regulized cost function and gradient formulas in logistic regression are Respectivaly
+
+<p align="center"><img src="Images/RegulisedCostFunction.png" alt="Rcost" width="300"/></p>
+<p align="center">and </p>
+<p align="center"><img src="Images/RegulisedGradient.png" alt="Rgrad" width="400"/></p>
+
+After succesfully implementing these functions a clear decision boundrey is shown in the following image:
+
+<p align="center"><img src="Images/RLogR.png" alt="RlogR" width="400"/></p>
 
 
 ### 3 Future work
