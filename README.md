@@ -1,10 +1,10 @@
 # Research Project Gameplay Programming
 ## Regression
-### Goal
+### 1 Goal
 
 The purpose of this research is to broaden my knowledge about artificial intelligence (AI), more specifically, **regression**. This will be done by implementing a set of exercises with both self-generated data and existing datasets to get a better grasp of the subject. Both advantages and drawbacks will be discussed for each type of regression analysed during this research.
 
-### Regression
+### 2 Regression
 Modern AI's are machine learning solutions created for a **specific task**. This can vary from understanding and analysing trends in market shares to finding the optimal location for a pizza shop. These AI's aren't considered *real intelligence* but use statistics and analytics to handle different problems dependant on their given training.
 The way that such AI's learn can be subdivided into three categories:
 * *Supervised Learning*, in which the algorithms are trained for a specific task with pre-existing datasets and human supervision.
@@ -13,7 +13,7 @@ The way that such AI's learn can be subdivided into three categories:
 
 AI's that combine different aspects of learning also exist but are out of the scope of this research.
 
-#### Supervised Learning
+#### 2.1 Supervised Learning
 The most relevant training method for this research is *Supervised Learning*. During supervised learning the goal is to approximate a mapping function *f* from input *x* to output *Y* using algorithms. 
 <p align="center">
 Y = f(x) 
@@ -23,10 +23,10 @@ This method is referred to as supervised learning because the creator knows what
 
 This research focusses on the different types of regression algorithms, who try to predict dependant values based on known datasets. This is done by looking at the relationship between different values. The following section will explain some of the most commonly used regression algorithms followed by an implementation explaining its use.
 
-#### Linear Regression
+#### 2.2 Linear Regression
 Linear regressiion is a frequently used method to analyze an available data set. 
 
-##### Simple Linear Regression
+##### 2.2.1 Simple Linear Regression
 ###### General explenation
 The most commonly used form of linear regression is known as **least squares fitting**. This form aims to fit a polynomial curve to data, in a way that the sum of squares of the distance from the line to the data points is minimized.
 
@@ -61,6 +61,7 @@ where x<sub>1</sub> = (x<sub>11</sub>, ... , x<sub>i1</sub>, ... , x<sub>n1</sub
 vectors that contain all sample values of the variables X<sub>1</sub> and Y, respectively. Note that the circumflex over a quantity indicates the sample average. For a more detailed description of the simple linear regression theory, I would recommend the following sources:
 * Section 3.1, Chapter 3 from the book “Pattern recognition and machine learning” of Bishop and Nasrabadi.
 * https://mathworld.wolfram.com/LeastSquaresFitting.html
+* Section 1, Chapter 1 from the Lecture notes [Supervised Learning](https://sgfin.github.io/files/notes/CS229_Lecture_Notes.pdf)
 
 ###### Implementation: Introduction
 >The files of this implementation can be found [here](Simple%20Linear%20Regression/01_Introduction).
@@ -78,7 +79,7 @@ To simulate the effects of a random experimental error, I've repeated this proce
 
 <p align="center"><img src="Images/Example3SLR.png" alt="SLR3" width="500"/></p>
 
-##### Gradient Descent
+##### 2.2.2 Gradient Descent
 ###### General explenation
 Gradient Descent is theoretically an algorithm that minimizes functions. This perfectly fits in the context of regression, where one tries to minimalize the sum of squared residuals. Any function can be defined by a set of parameters <ins>0</ins>. Gradient descent will initialize such a set and gradually move towards a set of parameters to minimize a cost function using calculus.
 
@@ -109,7 +110,7 @@ For this implementation, I replicated an exercise provided by the learning platf
 
 The implementation focusses on using the *update rule*  to update θ. In the following image, the red line indicates the first calculated regression line after 1 iteration of the update rule. This is clearly an inaccurate representation of the dataset, but after 1478 iterations, both theta's have convoluted to a fixed value. The regression line found with these theta values is shown by the yellow line.
 
-<p align="center"><img src="Images/Example1GDSLR.png" alt="SLR3" width="500"/></p>
+<p align="center"><img src="Images/Example1GDSLR.png" alt="GDSLR1" width="500"/></p>
 
 This regression line can further be used to estimate the average height of children with a specific age, an example can be found in the code.
 
@@ -120,29 +121,30 @@ This regression line can further be used to estimate the average height of child
 
 By implementing the definition of the cost function, all possible theta's can be calculated and visualised inside of a surface plot. If this is done using the previously generated dataset the following can be created:
 
-<p align="center"><img src="Images/Example2GDSLR.png" alt="SLR3" width="500"/></p>
+<p align="center"><img src="Images/Example2GDSLR.png" alt="GDSLR2" width="500"/></p>
 
 The red line indicates the theta's calculated in the previous example. <br/>
 *It is important to note that this red line can be found in the valley of the surface plot, where the cost function is at its lowest.*
 
-#### Multivariate Linear Regression
-###### General Explenation
+#### 2.3 Multivariate Linear Regression
+##### General Explenation
 It is also possible to analyse the degree of a linear relation of multiple predictors and responses. This is based on the same concept of the previous linear regression but adds extra variables to the field. A detailed description of multivariate regression problems can be found via the following sources:
 * Section 2.3.1, Ch. 2 from the book “The Elements of Statistical Learning” of Hastie, Tibshirani and Friedman.
 * Section 3.1, Ch. 3 from the book “Pattern recognition and machine learning” of Bishop and Nasrabadi.
+* Section 4, Ch. 1 from the Lecture notes [Supervised Learning](https://sgfin.github.io/files/notes/CS229_Lecture_Notes.pdf)
 
-###### Implementation: Multivariate Regression
+##### Implementation: Multivariate Regression
 >The files of this implementation can be found [here](Multivariate%20Linear%20Regression).
 
-This implementation is my method used while following an exercise provided by the learning platform 'openclassroom' in the course *Machine Learning* found [here](http://openclassroom.stanford.edu/MainFolder/DocumentPage.php?course=MachineLearning&doc=exercises/ex3/ex3.html). Because the implementation of multivariate linear regression is very similar to simple linear regression, it focusses a bit more at the influence of the learning rate, which can heavily influence the results, as mentioned at the end of **Implementation: Gradient Descent**.
+This implementation is my method used while following an exercise provided by the learning platform 'openclassroom' in the course *Machine Learning* found [here](http://openclassroom.stanford.edu/MainFolder/DocumentPage.php?course=MachineLearning&doc=exercises/ex3/ex3.html). Because the implementation of multivariate linear regression is very similar to simple linear regression, it focusses a bit more at the influence of the learning rate, which can heavily influence the results, as mentioned at the end of section 2.2.2 **Implementation: Gradient Descent**.
 
 The following graph shows the influence of the learning rates, for the values 0.01, 0.03, 0.1, 0.3, 1, and 1.3.
 
-<p align="center"><img src="Images/Example1MLR.png" alt="SLR3" width="500"/></p>
+<p align="center"><img src="Images/Example1MLR.png" alt="MLR1" width="500"/></p>
 
 By analysing the graph, we can assume that a small learning rate will cause the cost function to convolute too slowly. This increases the amount of itteration needed to reach the convoluted value of the cost function. However, This clearly does not mean you can simply increase the learning rate without concequences. By comparing the blue-striped line with the red-striped line, we can see how a higher learningrate can make the convergence slower or even impossible.
 
-Just like in the previous implementation **Implementation: Gradient Descent**, we can use the generated theta's to predict values. However, Normal equations with regularization are necessary to mitigate the chances of the model "overfitting" the training data, which could happen if we allowed  parameters to grow arbitrarily large.
+Just like in the previous implementation found in section 2.2.2 **Implementation: Gradient Descent**, we can use the generated theta's to predict values. However, Normal equations with regularization are necessary to mitigate the chances of the model "overfitting" the training data, which could happen if we allowed  parameters to grow arbitrarily large.
 To regulate a linear regression model, a penalty term is used on the square values. The influence of this penalty term is controlled by the parameter λ. <br/>
 
 With y being the target values, X the input features, and λ the regularization parameter, we can find the close form solution for the regularized linear regression with the  following formula:
@@ -152,20 +154,55 @@ With y being the target values, X the input features, and λ the regularization 
 Just like un-regulized linear regression, the predicted values y is calculated by y = X<ins>θ</ins>.
 My implementation of the normalization and regularization can be found at the end of the implementation.
 
+#### 2.4 Logistic Regression
+##### General Explenation
+As mentioned at the beginning of this document in section 2.1, supervised learning problems can be grouped into two main categories, classification and regression problems. Although regression algorithms are obviously made to solve regression problems, logistic regression is e method focussed on classification problems. This **is** however still a regression model. Logistic regression builds a regression model to predict the probability that a given data set belongs to a specific category. These are **binary** classification problems, which means that there are only two options: 0 or 1. The value 1 is often referred to as the positive class, whereas the value 0 the negative class.
 
-#### Logistic Regression
-###### General Explenation
+Linear regression will assume that data follows a linear function. On the other hand, logistic regression uses the **logistic** function, better known as the **sigmoid** function:
 
-###### Implementation: Newton’s Method
+<p align="center"><img src="Images/SigmoidFunction.png" alt="Sigmoid" width="150"/><br/><img src="Images/SigmoidFunctionImg.png" alt="SigmoidIm" width="300"/></p>
+
+It is important to nota that g(z) tends towards 1 and 0, as z -> ∞ adn z -> -∞ respectively.  
+
+Next up it is important to know how to incorporate θ within the logistic regression model. Assume that P(y = 1|<ins>x</ins>; <ins>θ</ins>) = h(<ins>x</ins>) and <br/>P(y = 0|<ins>x</ins>; <ins>θ</ins>) = 1 − h(<ins>x</ins>). When we have n training examples, we can write the likelihood of the parameters as the following:
+
+<p align="center"><img src="Images/Likelyhood.png" alt="Likelihood" width="300"/></p>
+
+From this point on we can do either one of these two things:
+* Maximize the logistic likelihood:
+
+<p align="center"><img src="Images/LikelyhoodMax.png" alt="LikelihoodMax" width="350"/></p>
+
+* Minimize the cost function:
+
+<p align="center"><img src="Images/MinimizeCostFunction.png" alt="MinCostFunc" width="200"/></p>
+
+When we tried to minimize the cost function, this can be done similarly to the derivation of linear regression using Gradient Descent. However, an other method called **Newton's method** can also be used.
+
+The update rule of Newton's method makes use of a gradient and a hessian (to describe the local curvature of a function) an can be written as such:
+
+<p align="center"><img src="Images/NewtonsMethod.png" alt="NewtonsMethod" width="200"/></p>
+
+In logistic regression, the Hassian and the gradient are written as followed respectively:
+
+<p align="center"><img src="Images/LRHessian.png" alt="LRHes" width="300"/></p>
+<p align="center"><img src="Images/LRGradient.png" alt="LRGrad" width="300"/></p>
+
+These formulas were the basis used in my implementation in the section bellow.
+
+##### Implementation: Newton’s Method
+>The files of this implementation can be found [here](Logistic%20Regression/NewtonsMethod).
+
+##### Implementation: Regulised Logistic Regression
+>The files of this implementation can be found [here](Logistic%20Regression/Regulised%20Logistic%20Regression).
 
 
-###### Implementation: Regulised Logistic Regression
 
-### Future work
+### 3 Future work
 
-### Conclusion
+### 4 Conclusion
 
-### Sources
+### 5 Sources
 * Machine learning Chapters used (http://openclassroom.stanford.edu/MainFolder/CoursePage.php?course=MachineLearning):
   * http://openclassroom.stanford.edu/MainFolder/DocumentPage.php?course=MachineLearning&doc=exercises/ex2/ex2.html
   * http://openclassroom.stanford.edu/MainFolder/DocumentPage.php?course=MachineLearning&doc=exercises/ex3/ex3.html
@@ -182,6 +219,9 @@ My implementation of the normalization and regularization can be found at the en
  * http://home.iitk.ac.in/~shalab/econometrics/Chapter2-Econometrics-SimpleLinearRegressionAnalysis.pdf
 * Gradient descent
  * https://medium.com/@lachlanmiller_52885/machine-learning-week-1-cost-function-gradient-descent-and-univariate-linear-regression-8f5fe69815fd
-* Multivariate Regression
+* Multivariate regression
  * https://brilliant.org/wiki/multivariate-regression/#:~:text=Multivariate%20Regression%20is%20a%20method,responses)%2C%20are%20linearly%20related.
- 
+* Logistic regression
+ *https://www.geeksforgeeks.org/understanding-logistic-regression/#:~:text=Logistic%20regression%20is%20basically%20a,regression%20IS%20a%20regression%20model.
+* Formullas, general information and simoid function
+ * [Supervised Learning](https://sgfin.github.io/files/notes/CS229_Lecture_Notes.pdf)
