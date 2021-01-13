@@ -234,7 +234,7 @@ A final option could be to look more into the optimisation of such algorithms to
 Even if regression is one of the more commonly know AI-algorithms it can **not** be underestimated. However, while the statistical approach was overwhelming in the beginning, implementing them proved to clarify the meaning of each formula a lot. The concept of regression became more clear for me and I think I am capable of making basic implementations. Finally, I do not think a lot of games use or can use regression as the main gameplay feature, but I can definitely see it being used by an AI to categorise elements or make predictions to make the right decisions in given circumstances.
 
 ### 5 Sources
-* Machine learning Chapters used (http://openclassroom.stanford.edu/MainFolder/CoursePage.php?course=MachineLearning):
+* [Machine learning](http://openclassroom.stanford.edu/MainFolder/CoursePage.php?course=MachineLearning) Chapters used:
   * http://openclassroom.stanford.edu/MainFolder/DocumentPage.php?course=MachineLearning&doc=exercises/ex2/ex2.html
   * http://openclassroom.stanford.edu/MainFolder/DocumentPage.php?course=MachineLearning&doc=exercises/ex3/ex3.html
   * http://openclassroom.stanford.edu/MainFolder/DocumentPage.php?course=MachineLearning&doc=exercises/ex4/ex4.html 
