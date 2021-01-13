@@ -24,8 +24,43 @@ This method is referred to as supervised learning because the creator knows what
 This research focusses on the different types of regression algorithms, who try to predict dependant values based on known datasets. This is done by looking at the relationship between different values. The following section will explain some of the most commonly used regression algorithms followed by an implementation explaining its use.
 
 #### Linear Regression
-Linear regressiion is a frequently used method to analyze an available data set. The most commonly used form of linear regression is known as **least squares fitting**. This form aims to fit a polynomial curve to data, in a way that the sum of squares of the distance from the line to the data points is minimized.
+Linear regressiion is a frequently used method to analyze an available data set. 
+
 ##### Simple Linear Regression
+The most commonly used form of linear regression is known as **least squares fitting**. This form aims to fit a polynomial curve to data, in a way that the sum of squares of the distance from the line to the data points is minimized.
+
+When the least squeres estimator of a linear regression model with a single explanatory variable is called **simple linear regression**. This fits a straight line trough a set of n points in such a way that makes the sum of squared residuals as small as possible. A visualisation of this process can be seen in the following image:
+
+![](Images/LeastSquaresFitting.png)
+
+Suppose there are n training samples  <ins>x<sub></ins>i</sub>= (1, x<sub>i1</sub>)<sup>T</sup> and y<sub>i</sub>, where i = 1, 2, ... , n. 
+These samples represent the input random vector <br/> <ins>X</ins> = (1, X<sub>i</sub>)<sup>T</sup>and the output random variable Y, respectively.
+The following function describes <ins>x</ins> <sub>i</sub> and y<sub>i</sub>:
+
+<p align="center">
+y<sub>i</sub> = <ins>θ</ins><sup>T</sup> <ins>x</ins><sub>i</sub> + ϵ<sub>i</sub> = θ<sub>0</sub> + θ<sub>1</sub>x<sub>1</sub> + ϵ<sub>i</sub>,
+</p>
+
+where <ins>θ</ins> = (θ<sub>0</sub>, θ<sub>1</sub>)<sup>T</sup> can be seen as the vector of the parameters and ϵ<sub>i</sub> is the error for a pair
+(x<sub>i</sub>, y<sub>i</sub>). The objective is to find the equation of the straight line:
+
+<p align="center">
+Y = θ<sub>0</sub> + θ<sub>1</sub>X<sub>1</sub>
+</p>
+
+This provides the most optimal fit for the data points, where the sum of squared residuals are minimized. This would mean that the y-intercept θ<sub>0</sub> and the slope θ<sub>1</sub> solve the following minimization problem:
+
+![](Images/MinimizationProblem.png)
+
+By expanding to get a quadratic expression in θ<sub>0</sub> and θ<sub>1</sub>, it can be shown that the minimizing values of θ<sub>0</sub> and θ<sub>1</sub> of the formula above are:
+
+![](Images/ThetaValues.png)
+
+where x<sub>1</sub> = (x<sub>11</sub>, ... , x<sub>i1</sub>, ... , x<sub>n1</sub>) and y = (y<sub>11</sub>, ... , y<sub>i1</sub>, ... , y<sub>n1</sub>) are the row
+vectors that contain all sample values of the variables X<sub>1</sub> and Y, respectively. Note that the circumflex over a quantity indicates the sample average. For a more detailed description of the simple linear regression theory, I would recommend the following sources:
+* Section 3.1, Chapter 3 from the book “Pattern recognition and machine learning” of Bishop and Nasrabadi.
+* https://mathworld.wolfram.com/LeastSquaresFitting.html
+
 ##### Gradient Descent
 
 #### Multivariate Linear Regression
@@ -50,3 +85,5 @@ Linear regressiion is a frequently used method to analyze an available data set.
   * https://www.investopedia.com/terms/r/regression.asp#:~:text=Regression%20is%20a%20statistical%20method,(known%20as%20independent%20variables)
   * https://machinelearningmastery.com/supervised-and-unsupervised-machine-learning-algorithms/
   * https://www.unemyr.com/ai-algorithms-regression/
+* Simple Linear regression
+ * http://home.iitk.ac.in/~shalab/econometrics/Chapter2-Econometrics-SimpleLinearRegressionAnalysis.pdf
