@@ -105,7 +105,7 @@ To reduce the cost function, θ will need to be updated each iteration  using th
 ###### Implementation: Gradient Descent
 >The files of this implementation can be found [here](Simple%20Linear%20Regression/02_GradientDescent).
 
-For this implementation, I replicated an exercise found on the learning platform openclassroom in the course *Machine Learning* found [here](http://openclassroom.stanford.edu/MainFolder/DocumentPage.php?course=MachineLearning&doc=exercises/ex2/ex2.html). This was done by generating my own relevant data and implementing linear regression. The generated data involves children between the ages of 2 and 8 years old and their heights.
+For this implementation, I replicated an exercise provided by the learning platform 'openclassroom' in the course *Machine Learning* found [here](http://openclassroom.stanford.edu/MainFolder/DocumentPage.php?course=MachineLearning&doc=exercises/ex2/ex2.html). This was done by generating my own relevant data and implementing linear regression. The generated data involves children between the ages of 2 and 8 years old and their heights.
 
 The implementation focusses on using the *update rule*  to update θ. In the following image, the red line indicates the first calculated regression line after 1 iteration of the update rule. This is clearly an inaccurate representation of the dataset, but after 1478 iterations, both theta's have convoluted to a fixed value. The regression line found with these theta values is shown by the yellow line.
 
@@ -122,14 +122,46 @@ By implementing the definition of the cost function, all possible theta's can be
 
 <p align="center"><img src="Images/Example2GDSLR.png" alt="SLR3" width="500"/></p>
 
-The red line indicates the theta's calculated in the previous example. It is important to note that this red line can be found in the valley of the surface plot, where the cost function is at its lowest.
+The red line indicates the theta's calculated in the previous example. <br/>
+*It is important to note that this red line can be found in the valley of the surface plot, where the cost function is at its lowest.*
 
 #### Multivariate Linear Regression
+###### General Explenation
+It is also possible to analyse the degree of a linear relation of multiple predictors and responses. This is based on the same concept of the previous linear regression but adds extra variables to the field. A detailed description of multivariate regression problems can be found via the following sources:
+* Section 2.3.1, Ch. 2 from the book “The Elements of Statistical Learning” of Hastie, Tibshirani and Friedman.
+* Section 3.1, Ch. 3 from the book “Pattern recognition and machine learning” of Bishop and Nasrabadi.
+
+###### Implementation: Multivariate Regression
+>The files of this implementation can be found [here](Multivariate%20Linear%20Regression).
+
+This implementation is my method used while following an exercise provided by the learning platform 'openclassroom' in the course *Machine Learning* found [here](http://openclassroom.stanford.edu/MainFolder/DocumentPage.php?course=MachineLearning&doc=exercises/ex3/ex3.html). Because the implementation of multivariate linear regression is very similar to simple linear regression, it focusses a bit more at the influence of the learning rate, which can heavily influence the results, as mentioned at the end of **Implementation: Gradient Descent**.
+
+The following graph shows the influence of the learning rates, for the values 0.01, 0.03, 0.1, 0.3, 1, and 1.3.
+
+<p align="center"><img src="Images/Example1MLR.png" alt="SLR3" width="500"/></p>
+
+By analysing the graph, we can assume that a small learning rate will cause the cost function to convolute too slowly. This increases the amount of itteration needed to reach the convoluted value of the cost function. However, This clearly does not mean you can simply increase the learning rate without concequences. By comparing the blue-striped line with the red-striped line, we can see how a higher learningrate can make the convergence slower or even impossible.
+
+Just like in the previous implementation **Implementation: Gradient Descent**, we can use the generated theta's to predict values. However, Normal equations with regularization are necessary to mitigate the chances of the model "overfitting" the training data, which could happen if we allowed  parameters to grow arbitrarily large.
+To regulate a linear regression model, a penalty term is used on the square values. The influence of this penalty term is controlled by the parameter λ. <br/>
+
+With y being the target values, X the input features, and λ the regularization parameter, we can find the close form solution for the regularized linear regression with the  following formula:
+
+<p align="center"><ins>θ</ins>= [X<sup>T</sup>X + λ * I]<sup>-1</sup> X<sup>T</sup>y</p>
+
+Just like un-regulized linear regression, the predicted values y is calculated by y = X<ins>θ</ins>.
+My implementation of the normalization and regularization can be found at the end of the implementation.
+
 
 #### Logistic Regression
-##### Newton’s Method
-##### Regulised Logistic Regression
+###### General Explenation
 
+###### Implementation: Newton’s Method
+
+
+###### Implementation: Regulised Logistic Regression
+
+### Future work
 
 ### Conclusion
 
@@ -150,3 +182,6 @@ The red line indicates the theta's calculated in the previous example. It is imp
  * http://home.iitk.ac.in/~shalab/econometrics/Chapter2-Econometrics-SimpleLinearRegressionAnalysis.pdf
 * Gradient descent
  * https://medium.com/@lachlanmiller_52885/machine-learning-week-1-cost-function-gradient-descent-and-univariate-linear-regression-8f5fe69815fd
+* Multivariate Regression
+ * https://brilliant.org/wiki/multivariate-regression/#:~:text=Multivariate%20Regression%20is%20a%20method,responses)%2C%20are%20linearly%20related.
+ 
