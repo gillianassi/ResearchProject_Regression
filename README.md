@@ -239,7 +239,7 @@ Even if regression is one of the more commonly know AI-algorithms it can **not**
   * http://openclassroom.stanford.edu/MainFolder/DocumentPage.php?course=MachineLearning&doc=exercises/ex3/ex3.html
   * http://openclassroom.stanford.edu/MainFolder/DocumentPage.php?course=MachineLearning&doc=exercises/ex4/ex4.html 
   * http://openclassroom.stanford.edu/MainFolder/DocumentPage.php?course=MachineLearning&doc=exercises/ex5/ex5.html
-* Formullas, general information and simoid function image
+* Formulas, general information and simoid function image
   * [Supervised Learning](https://sgfin.github.io/files/notes/CS229_Lecture_Notes.pdf)
 * Artificial intelligence:
   * https://www.unemyr.com/understanding-ai-algorithms/
