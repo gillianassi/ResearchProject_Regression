@@ -2,7 +2,7 @@
 ## Regression
 ### 1 Goal
 
-The purpose of this research is to broaden my knowledge about artificial intelligence (AI), more specifically, **regression**. This will be done by implementing a set of exercises with both self-generated data and existing datasets to get a better grasp of the subject. Both advantages and drawbacks will be discussed for each type of regression analysed during this research.
+The purpose of this research is to expand my knowledge about artificial intelligence (AI), more specifically, **regression**. This will be done by implementing a set of exercises with both self-generated data and existing datasets to get a better grasp of the subject. Both advantages and drawbacks will be discussed for each type of regression analysed during this research.
 
 ### 2 Regression
 Modern AI's are machine learning solutions created for a **specific task**. This can vary from understanding and analysing trends in market shares to finding the optimal location for a pizza shop. These AI's aren't considered *real intelligence* but use statistics and analytics to handle different problems dependant on their given training.
@@ -24,7 +24,7 @@ This method is referred to as supervised learning because the creator knows what
 This research focusses on the different types of regression algorithms, who try to predict dependant values based on known datasets. This is done by looking at the relationship between different values. The following section will explain some of the most commonly used regression algorithms followed by an implementation explaining its use.
 
 #### 2.2 Linear Regression
-Linear regressiion is a frequently used method to analyze an available data set. 
+Linear regressiion is a frequently used method to analyse an available data set. 
 
 ##### 2.2.1 Simple Linear Regression
 ###### General explenation
@@ -64,7 +64,7 @@ vectors that contain all sample values of the variables X<sub>1</sub> and Y, res
 * Section 1, Chapter 1 from the Lecture notes [Supervised Learning](https://sgfin.github.io/files/notes/CS229_Lecture_Notes.pdf)
 
 ###### Implementation: Introduction
->The files of this implementation can be found [here](Simple%20Linear%20Regression/01_Introduction).
+>The file of this implementation can be found [here](Simple%20Linear%20Regression/01_Introduction).
 
 To understand the concept of simple linear regression I generated some experimental data adding artificial noise using the equation <br/> y = a<sub>0</sub> + a<sub>1</sub> * x, where a<sub>0</sub> = 2 and a<sub>1</sub> = 1. This is shown in the following image, containing a yellow line indicating the computed linear regression:
 
@@ -128,7 +128,7 @@ The red line indicates the theta's calculated in the previous example. <br/>
 
 #### 2.3 Multivariate Linear Regression
 ##### General Explenation
-It is also possible to analyse the degree of a linear relation of multiple predictors and responses. This is based on the same concept of the previous linear regression but adds extra variables to the field. A detailed description of multivariate regression problems can be found via the following sources:
+It is also possible to analyse the degree of a linear relation of multiple predictors and responses. This is based on the same concept of the previous linear regression but adds extra variables to the field. A detailed description of multivariate regression problems can be found through the following sources:
 * Section 2.3.1, Ch. 2 from the book “The Elements of Statistical Learning” of Hastie, Tibshirani and Friedman.
 * Section 3.1, Ch. 3 from the book “Pattern recognition and machine learning” of Bishop and Nasrabadi.
 * Section 4, Ch. 1 from the Lecture notes [Supervised Learning](https://sgfin.github.io/files/notes/CS229_Lecture_Notes.pdf)
@@ -227,11 +227,11 @@ After successfully implementing these functions a clear decision boundary  is sh
 <p align="center"><img src="Images/RLogR.png" alt="RlogR" width="400"/></p>
 
 ### 3 Future work
-It can be very interesting to implement the regression algorithms on real datasets instead of generated or provided ones. Although I have learned a lot from these implementations, I feel that I still have a lot to discover in the field of regression. In addition, I only briefly looked at the subject of classification problems. This can be elaborated on in the future.
-A final option could be to look more into the optimisation of such algorithms to possibly make them usable in real-time. 
+It can be vastly interesting to implement the regression algorithms on real datasets instead of generated or provided ones. Although I have learned a lot from these implementations, I feel that I still have a lot to discover in the field of regression. In addition, I only briefly looked into the subject of classification problems. This can be elaborated on in the future.
+A final option could be to experiment more with the optimisation of such algorithms to possibly make them usable in real-time. 
 
 ### 4 Conclusion
-Even if regression is one of the more commonly know AI-algorithms it can **not** be underestimated. However, while the statistical approach was overwhelming in the beginning, implementing them proved to clarify the meaning of each formula a lot. The concept of regression became more clear for me and I think I am capable of making basic implementations. Finally, I do not think a lot of games use or can use regression as the main gameplay feature, but I can definitely see it being used by an AI to categorise elements or make predictions to make the right decisions in given circumstances.
+Even if regression is one of the more commonly know AI-algorithms it can **not** be underestimated. However, while the statistical approach was overwhelming in the beginning, implementing them proved to clarify the meaning of each formula a lot. The concept of regression became more clear for me and I am capable of making basic implementations. Finally, I do not think a lot of games use or can use regression as the main gameplay feature, but I can definitely see it being used by an AI to categorise elements or make predictions to make the right decisions in given circumstances.
 
 ### 5 Sources
 * [Machine learning](http://openclassroom.stanford.edu/MainFolder/CoursePage.php?course=MachineLearning) Chapters used:
